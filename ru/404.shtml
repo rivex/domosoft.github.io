@@ -1,0 +1,98 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/index.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta charset="utf-8">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>DOMOsoft</title>
+<!-- InstanceEndEditable -->
+<link href="../custom.css" rel="stylesheet" type="text/css">
+<!-- InstanceBeginEditable name="head" -->
+<script language="javascript" type="text/javascript">
+function deflang() {
+	  //определение языка браузера
+		var androidlang;
+		if ( navigator && navigator.userAgent
+        && (androidlang = navigator.userAgent.match(/android.*\W(\w\w)-(\w\w)\W/i))
+		) {
+        androidlang = androidlang[1];
+		}
+		if (!androidlang && navigator) {
+        if (navigator.language) {
+                androidlang = navigator.language;
+        } else if (navigator.browserLanguage) {
+                androidlang = navigator.browserLanguage;
+        } else if (navigator.systemLanguage) {
+                androidlang = navigator.systemLanguage;
+        } else if (navigator.userLanguage) {
+                androidlang = navigator.userLanguage;
+        }
+        androidlang = androidlang.substr(0, 2);
+		}
+			return androidlang;
+}
+	//переадрессация на страницу языка
+//	if (deflang()=='ru') window.location.href="ru/index.html";
+</script>
+<!-- InstanceEndEditable -->
+<!--google analytics-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-39293554-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body>
+<div class="container">
+  <div class="header"><a href="../index.html"><img src="../img/top01.png" alt="DOMOsoft" name="logo" width="212" height="76" id="logo" /></a><a href="../index.html"><img src="../img/top02a.png" alt="DOMOsoft" name="logo2" width="788" height="76" id="logo2"/></a></div>
+  <!-- end .header -->
+  <div class="sidebar1">
+    <ul class="nav">
+      <li class="post-body"><a target="_blank" href="http://apps.opera.com/en_ua/awards/"><img src="../img/opera_languages_translators.png" alt="Opera Award" name="googleplay" width="124" id="awards" /></a></li>
+      <li class="post-body"><a target="_blank" href="https://play.google.com/store/apps/developer?id=DOMOsoft"><img src="../img/googleplay-124.png" alt="Google Play" name="googleplay" id="googleplay" /></a></li>
+      <li class="post-body"><a target="_blank" href="http://apps.samsung.com/mars/topApps/getSellerList.as?sellerId=nnitwwhdun&_isAppsDep=Y"><img src="../img/samsungapps-124.png" alt="Samsung Apps" name="samsungapps" id="samsungapps" /></a></li>
+      <li class="post-body"><a target="_blank" href="http://www.lgworld.com"><img src="../img/LG-124.png" alt="LG Smart World" name="lg" id="lg" /></a></li>
+      <li class="post-body"><a target="_blank" href="http://appstore.com/yuriyyanshin"><img src="../img/appstore-124.png" alt="Apple AppStore" name="appstore" id="appstore" /></a></li>
+      <li class="post-body"><a target="_blank" href="http://appworld.blackberry.com/webstore/vendor/47826/"><img src="../img/blackberry-124.png" alt="Blackberry World" name="blackberry" id="blackberry" /></a></li>
+      <li class="post-body"><a target="_blank" href="http://www.windowsphone.com/en-us/store/publishers?publisherId=DOMOsoft"><img src="../img/windows-124.png" alt="Windows Phone Store" name="windows" id="windows" /></a></li>
+      <li class="post-body"><a target="_blank" href="http://apps.opera.com/en_ua/free_catalog.php?vendor_id=43904"><img src="../img/opera-124.png" alt="Opera Software" name="opera" id="opera" /></a>
+      </li>
+      <li class="post-body"><a target="_blank" href="http://www.amazon.com/s/ref=bl_sr_mobile-apps?_encoding=UTF8&field-brandtextbin=DOMOsoft&node=2350149011"><img src="../img/amazon-124.png" alt="Amazon" name="amazon" id="amazon" /></a></li>
+      <li><a> </a></li>
+      <li class="post-body"><a href="contact.html"><img src="../img/contact-124.png" alt="Contact Us" name="contact" id="contact" /></a></li>
+    </ul>
+    <a href="../en/"></a>
+    <a href="../ru/"></a>
+    <a href="../es/"></a>
+    <a href="../it/"></a>
+    <a href="../zt/"></a>
+    <a href="../zs/"></a>
+    <a href="../ko/"></a>
+    <a href="../de/"></a>
+    <a href="../pl/"></a>
+    <a href="../pt/"></a>
+    <a href="../ua/"></a>
+    <a href="../fr/"></a>
+    <a href="../jp/"></a>
+    <a href="../ar/"></a>
+    <a href="../cz/"></a>
+
+    <!-- end .sidebar1 --></div>
+  <div class="content">
+  <!-- InstanceBeginEditable name="context_changed" -->
+  <h1 style="margin:5px 95px;">Ошибка 404: Страница не найдена</h1>
+  <br>
+  <h2 style="margin:5px 95px;">Перейти на <a href="../index.html">Главную</a> </h2>
+  <!-- InstanceEndEditable -->
+  <!-- end .content --></div>
+  <!-- end .container --></div>
+</body>
+<!-- InstanceEnd --></html>
