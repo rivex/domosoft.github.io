@@ -1,0 +1,210 @@
+@charset "utf-8";
+
+body {
+	font: 80%/1.2 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #b7b7b7;
+	margin: 0;
+	padding: 0;
+	color: #FFF;
+}
+
+/* ~~ Селекторы элементов/тегов ~~ */
+ul, ol, dl { /* Из-за различий между браузерами рекомендуется обнулять поля в списках. Для согласованности можно указать нужные величины либо здесь, либо в элементах списка (LI, DT, DD), которые они содержат. Помните, что сделанное здесь последовательно включается в список .nav, если только не будет прописан более конкретный селектор. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* удаление верхнего поля позволяет обойти проблему выхода полей за границы содержащего их контейнера DIV. Оставшееся нижнее поле отделит его от любых последующих элементов. */
+	padding-right: 15px;
+	padding-left: 15px; /* добавление боковых полей к элементам внутри контейнеров DIV, а не к самим контейнерам избавляет от необходимости расчетов рамочной модели. В качестве альтернативы можно использовать вложенный контейнер DIV с боковыми полями. */
+}
+a img { /* этот селектор убирает стандартную синюю рамку, которая появляется у изображений в некоторых браузерах, если вокруг изображения есть ссылка */
+	border: none;
+}
+h1, h4 {
+	font-weight:normal;
+	font-size: 14px;
+}
+
+/* ~~ Оформление ссылок на вашем сайте должно оставаться в этом порядке, включая группу селекторов, создающих эффект наведения. ~~ */
+a:link {
+	color: #000;
+	text-decoration: underline; /* если только ссылки не должны выглядеть исключительно своеобразно, то для быстрого зрительного распознавания рекомендуется использовать подчеркивание */
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* эта группа селекторов обеспечивает пользователю, работающему с клавиатурой, такие же возможности наведения, как и при использовании мыши. */
+	text-decoration: none;
+}
+
+/* ~~ этот контейнер фиксированной ширины окружает все остальные DIV ~~ */
+.container {
+	display: table;
+	table-layout:fixed;
+	width: 1000px;
+	background-color: #FFF;
+	margin: 0 auto; /* автоматическое задание величин по бокам в совокупности с шириной центрирует макет */
+}
+
+/* ~~ верхнему колонтитулу не задана ширина. Он растянется на всю ширину макета. Он содержит заполнитель для изображения, который должен быть заменен логотипом по ссылке ~~ */
+.header {
+	margin-bottom:-5px;
+}
+
+/* ~~ Столбцы для макета. ~~ 
+
+1) Поля размещены только вверху и/или внизу DIV. Элементы в этих DIV имеют боковые поля. Это избавляет пользователя от необходимости расчетов рамочной модели. Помните, что при добавлении боковых полей или границы к самому DIV их ширина будет добавлена к задаваемой ширине, что образует "полную" ширину. Кроме того, можно удалить поля элемента в DIV и поместить внутри него второй DIV без ширины и с необходимыми по проекту полями.
+
+2) Столбцы не снабжаются полями, поскольку все они обтекающие. Если нужно добавить поля, то желательно не с той стороны, с которой обтекается столбец (например, правое поле у div, настроенного на обтекание справа).  Часто вместо этого можно применить padding. В случаях, когда это правило приходится нарушить, следует добавить к правилу div объявление "display:inline", чтобы исправить ошибку с удвоением полей в некоторых версиях Internet Explorer. 
+
+3) Поскольку классы можно использовать в документе многократно (а к элементу можно применять несколько классов), то столбцам вместо идентификаторов назначены имена классов. Например, два DIV с боковыми панелями могут при необходимости стыковаться. По желанию имена можно легко заменить на идентификаторы при условии, что они используются по одному на документ.
+
+4) Если вы предпочитаете, чтобы панель навигации была справа, а не слева, просто установите обтекание столбцов в противоположном направлении (все справа, а не слева), они выстроятся в обратном порядке. Перемещать DIV в исходном коде HTML-документа не нужно.
+
+*/
+.sidebar1 {
+	display: table-cell;
+	padding: 20px 0;
+	float: left;
+	width: 220px;
+	background-color: #FFF;
+	text-align: center;	
+}
+.content {
+	display: table-cell;
+	padding: 15px 0;
+	width: 780px;
+	float: left;
+	background-color: #3a75b7;
+}
+
+.left {
+	display: table-cell;
+	padding: 20px 10px;
+	float: left;
+	width: 160px;
+	text-align:left;
+}
+.right {
+	display: table-cell;
+	padding: 20px 0;
+	width: 540px;
+	float: left;
+	text-align: center;	
+}
+
+/* ~~ Этот сгруппированный селектор выдает списки в пространстве .content ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* это поле зеркально повторяет правое поле в правиле для заголовков и параграфов выше. Внизу поле помещено как граница между элементами списков, а слева — как отступ. Поля можно настраивать по желанию. */
+}
+
+/* ~~ Стили списка навигации (можно убрать, если решено использовать готовое подменю, например Spry) ~~ */
+ul.nav {
+	list-style: none; /* удаляет маркер списка */
+	border-top: 0px solid #666; /* создает верхнюю границу ссылок — все остальные размещаются с использованием нижней границы в LI */
+	margin-bottom: 15px; /* создает пространство между навигацией по содержимому ниже */
+}
+ul.nav li {
+/*	border-bottom: 1px solid #666; /* разделяет кнопки */
+}
+ul.nav a, ul.nav a:visited { /* группировка этих селекторов гарантирует, что ссылки будут выглядеть как кнопки даже после того, как пользователь перейдет по ним */
+	padding: 15px 5px 15px 5px;
+	display: block; /* наделяет ссылку свойствами блока, из-за чего она заполняет весь содержащий ее элемент LI. При этом вся область реагирует на щелчок мышью. */
+	width: 95%;  /*такая ширина позволяет нажимать всю кнопку в IE6. Если вам не нужна поддержка IE6, это можно удалить. Чтобы вычислить правильную ширину, вычтите ширину полей этой ссылки из ширины контейнера боковой панели. */
+	text-decoration: none;
+	background-color: #FFF;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* изменяет цвет текста и фона при навигации с помощью клавиатуры и мыши */
+/*	background-color: #ADB96E;*/
+	color: #FFF;
+}
+
+/* ~~ Нижний колонтитул ~~ */
+.footer {
+	padding: 10px 0;
+	background-color: #CCC49F;
+	position: relative;/* IE6 получает hasLayout для правильной очистки */
+	clear: both; /* это свойство очистки заставляет .container видеть место окончания столбцов и включать их */
+}
+
+/* ~~ прочие классы float/clear ~~ */
+.fltrt {  /* этот класс можно использовать для обтекания элемента справа на странице. Обтекаемый элемент должен предшествовать элементу, с которым он должен находиться рядом на странице. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* этот класс можно использовать для обтекания элемента слева на странице. Обтекаемый элемент должен предшествовать элементу, с которым он должен находиться рядом на странице. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* этот класс можно поместить в теге <br /> или в пустом блоке DIV в качестве конечного элемента, следующего за последним обтекаемым DIV (внутри #container), если .#footer удален или извлечен из #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+.post-body img { 
+-webkit-transition: all 0.4s ease;-moz-transition: all 0.4s ease;transition: all 0.4s ease;
+padding: 8px;
+background: #ffffff;
+border: 1px solid #d0d0d0;
+-moz-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}
+.post-body img:hover {
+-moz-transform: scale(1.1);-webkit-transform: scale(1.1);-o-transform: scale(1.1);-ms-transform: scale(1.1);transform: scale(1.1);
+background: #ffffff;
+border: 1px solid #cccccc;
+text-decoration: none;
+text-shadow: none;
+-moz-box-shadow: 1em 1em 1em -0.5em rgba(0,0,6,0.5);
+-webkid-box-shadow: 1em 1em 1em -0.5em rgba(0,0,6,0.5);
+box-shadow: 1em 1em 1em -0.5em rgba(0,0,6,0.5);
+}
+.post-icon img { 
+-webkit-transition: all 0.4s ease;-moz-transition: all 0.4s ease;transition: all 0.4s ease;
+padding: 0px;
+margin:7px;
+background: #ffffff;
+border: 0px solid #d0d0d0;
+-moz-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}
+.post-icon img:hover {
+-moz-transform: scale(1.1);-webkit-transform: scale(1.1);-o-transform: scale(1.1);-ms-transform: scale(1.1);transform: scale(1.1);
+background: #ffffff;
+border: 0px solid #cccccc;
+text-decoration: none;
+text-shadow: none;
+-moz-box-shadow: 1em 1em 1em -0.5em rgba(0,0,6,0.5);
+-webkid-box-shadow: 1em 1em 1em -0.5em rgba(0,0,6,0.5);
+box-shadow: 1em 1em 1em -0.5em rgba(0,0,6,0.5);
+}
+
+.styled-select select {
+   background: transparent;
+   color: #ddd;
+   width: 112px;
+   padding-top: 3px;
+   padding-right: 3px;
+   padding-bottom: 3px;
+   border: 0px solid;
+   height: 24px;
+}
+.styled-select {
+   display:inline-block;
+   width: 90px;
+   height: 24px;
+   overflow: hidden;
+   background: url(img/sel_arrow.png) no-repeat right;
+}
+input,select,textarea {outline:none;}

@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: http://domosoft.biz/sitemap.xml
